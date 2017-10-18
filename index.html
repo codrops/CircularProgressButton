@@ -45,20 +45,23 @@
 				<h2>Elastic version, with some easings (success, error)</h2>
 				<div class="box">
 					<!-- progress button -->
-					<div class="progress-button elastic">
+					<div class="progress-button elastic progress-button-not-react">
 						<button><span>Submit</span></button>
 						<svg class="progress-circle" width="70" height="70"><path d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z"/></svg>
 						<svg class="checkmark" width="70" height="70"><path d="m31.5,46.5l15.3,-23.2"/><path d="m31.5,46.5l-8.5,-7.1"/></svg>
 						<svg class="cross" width="70" height="70"><path d="m35,35l-9.3,-9.3"/><path d="m35,35l9.3,9.3"/><path d="m35,35l-9.3,9.3"/><path d="m35,35l9.3,-9.3"/></svg>
 					</div><!-- /progress-button -->
 					<!-- progress button -->
-					<div class="progress-button elastic">
+					<div class="progress-button elastic progress-button-not-react">
 						<button><span>Submit</span></button>
 						<svg class="progress-circle" width="70" height="70"><path d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z"/></svg>
 						<svg class="checkmark" width="70" height="70"><path d="m31.5,46.5l15.3,-23.2"/><path d="m31.5,46.5l-8.5,-7.1"/></svg>
 						<svg class="cross" width="70" height="70"><path d="m35,35l-9.3,-9.3"/><path d="m35,35l9.3,9.3"/><path d="m35,35l-9.3,9.3"/><path d="m35,35l9.3,-9.3"/></svg>
 					</div><!-- /progress-button -->
 				</div>
+				<!-- /ReactJS root -->
+				<h2>ReactJS version</h2>
+				<div id="root"></div>
 			</section>
 			<section class="related">
 				<p>If you enjoyed this demo you might also like:</p>
@@ -74,8 +77,10 @@
 		</div><!-- /container -->
 		<script src="js/classie.js"></script>
 		<script src="js/uiProgressButton.js"></script>
+		<script src="js/service-worker.js"></script>
+		<script src="js/reactJSProgressButton.js"></script>
 		<script>
-			[].slice.call( document.querySelectorAll( '.progress-button' ) ).forEach( function( bttn, pos ) {
+			[].slice.call( document.querySelectorAll( '.progress-button-not-react' ) ).forEach( function( bttn, pos ) {
 				new UIProgressButton( bttn, {
 					callback : function( instance ) {
 						var progress = 0,
